@@ -24,11 +24,7 @@ Components:
 ---------------------------------------------------------------------------
 Services:
 ---------------------------------------------------------------------------
-- employee-api.service: Service APIs for Employee (CRUD, upload service calls)
-Controller (endpoints) > Service (business logics) > Repository (data access)
-
-Database: 
-H2 Database Engine
+- employee-api.service: Service APIs for Employee
 
 --------------------------------------------------------------------------
 Cloning down the repository and setting up project
