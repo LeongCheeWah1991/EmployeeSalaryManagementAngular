@@ -44,6 +44,6 @@ OR
 2. Browse to directory
 3. Terminal > New Terminal
 4. Run command: npm install
-5. Run command: ng serve --proxy-config proxy.config.json
+5. Run command: ng serve --proxy-config src/proxy.config.json
 6. Access link: http://localhost:4200/dashboard 
    (assuming using default port of 4200)
