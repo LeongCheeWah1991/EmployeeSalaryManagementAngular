@@ -5,6 +5,17 @@
     overflow-y: auto;
 }
 
+#buttonsContainer{
+    margin-top: 10px;
+}
+
+#empTbSort {
+    width: auto;
+    overflow-x: auto;
+    min-width: 800px;
+    height: 400px !important;
+}
+
 tr.mat-header-row {
     height: 35px !important;
 }
@@ -12,6 +23,10 @@ tr.mat-header-row {
 th.mat-header-cell {
     text-align: center !important;
     font-size: large;
+}
+
+.mat-icon {
+    font-size: 20px;
 }
 
 .spinner-container {
@@ -38,4 +53,9 @@ th.mat-header-cell {
 
 .mat-column-actions {
     flex: 0 0 15%;
+}
+
+.success-snackbar {
+    color: black;
+    background-color: lightgreen;
 }

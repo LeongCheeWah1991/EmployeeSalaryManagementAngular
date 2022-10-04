@@ -54,7 +54,7 @@
             </mat-form-field>
         </div>
     </form>
-    <div mat-dialog-actions style="float:right">
+    <div id="formButtonsContainer" mat-dialog-actions>
         <button mat-button (click)="onCancel()" i18n>Cancel</button>
         <button inputType="submit" mat-raised-button color="primary" (click)="onConfirm('create')"
             *ngIf="this.formType ==='create'" i18n>Create</button>

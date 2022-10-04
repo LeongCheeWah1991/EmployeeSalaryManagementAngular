@@ -19,6 +19,18 @@ export class EmployeeApiService {
     return this.httpClient.get<any>(this.getAllEmployeesUrl);
   }
 
+  searchEmployees(minSalary: number, maxSalary: number, offset: number, limit: number, sort: string): Observable<any> {
+    let params = {
+      minSalary,
+      maxSalary,
+      offset,
+      limit,
+      sort
+    }
+
+    return this.httpClient.get<Employee[]>(this.employeesUrl, { params: params });
+  }
+
   createEmployee(createEmployee: any) {
     const headers = new HttpHeaders()
       .set('content-type', 'application/json');

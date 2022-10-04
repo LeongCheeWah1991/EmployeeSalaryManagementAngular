@@ -39,13 +39,9 @@ mat-divider {
     background-color: rgba(255, 255, 255, 0.5);
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
     .hide-on-small-screens {
         display: none;
-    }
-
-    .show-on-small-screens {
-        display: block !important;
     }
 
 }
