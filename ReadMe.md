@@ -35,3 +35,14 @@ e.g. git clone https://github.com/LeongCheeWah1991/EmployeeSalaryManagementAngul
 ---------------------------------------------------------------------------
 Running the application:
 ---------------------------------------------------------------------------
+- Using IDE (e.g. VSCode)
+1. Browse to the directory for the code that was cloned down
+2. Right-Click > Open With Code
+OR
+1. Open VSCode > Open Folder 
+2. Browse to directory
+3. Terminal > New Terminal
+4. Run command: npm install
+5. Run command: ng serve --proxy-config proxy.config.json
+6. Access link: http://localhost:4200/dashboard 
+   (assuming using default port of 4200)
