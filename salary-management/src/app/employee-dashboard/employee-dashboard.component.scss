@@ -1,0 +1,41 @@
+#dashboardContainer {
+    display: block;
+    margin-left: 10px;
+    margin-top: 10px;
+    overflow-y: auto;
+}
+
+tr.mat-header-row {
+    height: 35px !important;
+}
+
+th.mat-header-cell {
+    text-align: center !important;
+    font-size: large;
+}
+
+.spinner-container {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+}
+
+.mat-column-id {
+    width: 15%;
+}
+
+.mat-column-login {
+    width: 15%;
+}
+
+.mat-column-name {
+    width: 30%;
+}
+
+.mat-column-salary {
+    width: 15%;
+}
+
+.mat-column-actions {
+    flex: 0 0 15%;
+}

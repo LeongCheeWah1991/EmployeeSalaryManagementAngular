@@ -5,6 +5,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 
@@ -17,6 +19,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatToolbarModule,
     MatDividerModule,
     MatButtonModule,
+    MatTableModule,
+    MatProgressSpinnerModule,
   ],
   exports: [
     MatSidenavModule,
@@ -24,6 +28,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatToolbarModule,
     MatDividerModule,
     MatButtonModule,
+    MatTableModule,
+    MatProgressSpinnerModule,
   ]
   })
 export class NgMaterialModule { }

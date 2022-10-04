@@ -5,6 +5,8 @@ import { NgMaterialModule } from './ng-material/ng-material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+
 import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashboard.component';
 import { EmployeeFunctionOneComponent } from './employee-function-one/employee-function-one.component';
 
@@ -12,13 +14,14 @@ import { EmployeeFunctionOneComponent } from './employee-function-one/employee-f
   declarations: [
     AppComponent,
     EmployeeDashboardComponent,
-    EmployeeFunctionOneComponent
+    EmployeeFunctionOneComponent,
   ],
   imports: [
     BrowserModule,
     NgMaterialModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
