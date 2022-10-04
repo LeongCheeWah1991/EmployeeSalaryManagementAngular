@@ -12,6 +12,7 @@ import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashbo
 import { EmployeeFunctionOneComponent } from './employee-function-one/employee-function-one.component';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
 import { PromptDialogComponent } from './prompt-dialog/prompt-dialog.component';
+import { EmployeeUploadComponent } from './employee-upload/employee-upload.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PromptDialogComponent } from './prompt-dialog/prompt-dialog.component';
     EmployeeFunctionOneComponent,
     EmployeeFormComponent,
     PromptDialogComponent,
+    EmployeeUploadComponent,
   ],
   imports: [
     BrowserModule,

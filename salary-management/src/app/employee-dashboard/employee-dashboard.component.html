@@ -7,6 +7,12 @@
             <label i18n>Create</label>
         </button>
         &nbsp;
+        <button mat-raised-button color="primary" (click)="initUploadEmployees($event)">
+            <mat-icon>file_upload</mat-icon>
+            <label i18n>Upload</label>
+        </button>
+        <input type="file" name="fileUpload" accept="{{accept}}" (change)="uploadEmployees($event)"
+            style="display:none;" #fileUpload />
     </div>
     &nbsp;&nbsp;
     <div>

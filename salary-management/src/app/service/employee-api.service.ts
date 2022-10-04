@@ -42,4 +42,14 @@ export class EmployeeApiService {
     let urlWithParams = this.employeesUrl + id;
     return this.httpClient.delete<any>(urlWithParams);
   }
+
+  uploadEmployeeFile(file : File) {
+
+    const headers = new HttpHeaders()
+
+    let formParams = new FormData();
+    formParams.append('file', file);
+    return this.httpClient.post(this.uploadEmployeesUrl, formParams, { "headers": headers });
+
+  }
 }

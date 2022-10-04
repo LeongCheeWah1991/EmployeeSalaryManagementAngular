@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { EmployeeApiService } from '../service/employee-api.service';
 import { Employee } from '../models/employee';
@@ -6,6 +6,7 @@ import { PromptDialogComponent } from '../prompt-dialog/prompt-dialog.component'
 import { MatDialog } from '@angular/material/dialog';
 import { EmployeeFormComponent } from '../employee-form/employee-form.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { EmployeeUploadComponent } from '../employee-upload/employee-upload.component';
 
 @Component({
   selector: 'app-employee-dashboard',
@@ -24,6 +25,15 @@ export class EmployeeDashboardComponent implements OnInit {
 
   isLoading = false;
 
+  uploadInProgress = false;
+
+  uploadRequest: any;
+
+  accept = 'csv/*';
+
+  @ViewChild("fileUpload", { static: false })
+  fileUpload!: ElementRef;
+
   constructor(
     private empApiSvc: EmployeeApiService,
     private dialog: MatDialog,
@@ -40,7 +50,7 @@ export class EmployeeDashboardComponent implements OnInit {
   }
 
   getAllEmployees(): void {
-    this.empApiSvc.getEmployees().subscribe(data=> {
+    this.empApiSvc.getEmployees().subscribe(data => {
       this.employeeList = [];
       this.employeeList = [...data];
       this.initDatasource();
@@ -103,6 +113,64 @@ export class EmployeeDashboardComponent implements OnInit {
     });
   }
 
+  uploadEmployees(event: any) {
+
+    const file = event.target.files[0];
+
+    if (file) {
+      this.uploadInProgress = true;
+      this.showUploadDialog();
+      this.uploadRequest = this.empApiSvc.uploadEmployeeFile(file).subscribe({
+        next: (v) => {
+          this.uploadInProgress = false;
+          this.getAllEmployees();
+
+          this.closeUploadDialog();
+        },
+        error: (e) => {
+          if (e.error.uploadStatus != undefined) {
+            if (!e.error.uploadStatus) {
+              this.showErrorDialog("Another upload is in progress, please try again later.");
+            }
+          } else {
+            this.showErrorDialog("Error occurred while uploading employees.");
+          }
+          console.error(e)
+        }
+      });
+      this.fileUpload.nativeElement.value = '';
+    }
+  }
+
+  initUploadEmployees(event: any) {
+    this.fileUpload.nativeElement.click();
+  }
+
+  showUploadDialog() {
+
+    let dialogData = {
+      "title": "Upload",
+      "message": "Uploading is in progress",
+      "uploadStatus": this.uploadInProgress
+    }
+
+    const dialogRef = this.dialog.open(EmployeeUploadComponent, {
+      disableClose: true,
+      maxWidth: "400px",
+      data: dialogData,
+
+    });
+
+    dialogRef.afterClosed().subscribe(dialogResult => {
+      let result = dialogResult;
+      if (!result) {
+        this.uploadRequest.unsubscribe();
+        this.getAllEmployees();
+      }
+    });
+  }
+
+
   showErrorDialog(errorMsg: string) {
     const dialogData = {
       "type": "error",
@@ -123,6 +191,11 @@ export class EmployeeDashboardComponent implements OnInit {
       }
     });
   }
+
+  closeUploadDialog() {
+    this.dialog.closeAll();
+  }
+
 
   showSuccessNotification(message: string) {
     this.openSnackBar(message, '', 'success-snackbar');
