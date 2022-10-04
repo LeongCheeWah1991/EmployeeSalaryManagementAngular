@@ -1,0 +1,41 @@
+Title: Leong Chee Wah Employee Salary Management Assignment
+
+This is the Frontend component for the assignment. For the Backend component, please refer to the Backend Repo as follows:
+https://github.com/LeongCheeWah1991/EmployeeSalaryManagementSpringBoot
+
+This project (Employee Salary Management) is an Angular Application that consists of the following features:
+US1. Upload CSV records of Employees
+US2. Search Employees
+US3. CRUD operations related to Employees
+US4. Uploading CSV records single thread (No Concurrent Uploads)
+
+Angular + Material UI
+
+---------------------------------------------------------------------------
+Components:
+---------------------------------------------------------------------------
+- employee-dashboard: Employee Dashboard
+- employee-form: Employee Create/Update Form  
+- employee-function-one: Temporarily component for function 1 test link
+- employee-upload: Employee Upload Dialog
+- prompt-dialog: Prompt Dialog for confirmation
+- app.component
+
+---------------------------------------------------------------------------
+Services:
+---------------------------------------------------------------------------
+- employee-api.service: Service APIs for Employee (CRUD, upload service calls)
+Controller (endpoints) > Service (business logics) > Repository (data access)
+
+Database: 
+H2 Database Engine
+
+--------------------------------------------------------------------------
+Cloning down the repository and setting up project
+---------------------------------------------------------------------------
+1. Git clone the repository: 
+e.g. git clone https://github.com/LeongCheeWah1991/EmployeeSalaryManagementAngular
+
+---------------------------------------------------------------------------
+Running the application:
+---------------------------------------------------------------------------
