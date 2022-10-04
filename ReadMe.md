@@ -5,10 +5,10 @@ This is the Frontend component for the assignment. For the Backend component, pl
 https://github.com/LeongCheeWah1991/EmployeeSalaryManagementSpringBoot
 
 This project (Employee Salary Management) is an Angular Application that consists of the following features:
-US1. Upload CSV records of Employees
-US2. Search Employees
-US3. CRUD operations related to Employees
-US4. Uploading CSV records single thread (No Concurrent Uploads)
+- US1. Upload CSV records of Employees
+- US2. Search Employees
+- US3. CRUD operations related to Employees
+- US4. Uploading CSV records single thread (No Concurrent Uploads)
 
 Angular + Material UI
 
@@ -36,7 +36,7 @@ e.g. git clone https://github.com/LeongCheeWah1991/EmployeeSalaryManagementAngul
 ---------------------------------------------------------------------------
 Running the application:
 ---------------------------------------------------------------------------
-- Using IDE (e.g. VSCode)
+Using IDE (e.g. VSCode)
 1. Browse to the directory for the code that was cloned down
 2. Right-Click > Open With Code
 OR
@@ -46,4 +46,13 @@ OR
 4. Run command: npm install
 5. Run command: ng serve --proxy-config src/proxy.config.json
 6. Access link: http://localhost:4200/dashboard 
+   (assuming using default port of 4200)
+   
+   
+Using Command Prompt
+1. cd "directory"
+   where directory is for the code that was cloned down
+2. Run command: npm install
+3. Run command: ng serve --proxy-config src/proxy.config.json
+4. Access link: http://localhost:4200/dashboard 
    (assuming using default port of 4200)
