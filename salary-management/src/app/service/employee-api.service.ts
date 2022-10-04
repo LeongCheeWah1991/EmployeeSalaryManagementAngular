@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Employee } from '../models/employee';
 
 @Injectable({
   providedIn: 'root'
@@ -18,4 +19,27 @@ export class EmployeeApiService {
     return this.httpClient.get<any>(this.getAllEmployeesUrl);
   }
 
+  createEmployee(createEmployee: any) {
+    const headers = new HttpHeaders()
+      .set('content-type', 'application/json');
+
+    let body = JSON.stringify(createEmployee);
+    return this.httpClient.post<Employee>(this.employeesUrl, body, { "headers": headers });
+  }
+
+  updateEmployee(updatedEmployee: any) {
+    const headers = new HttpHeaders()
+      .set('content-type', 'application/json');
+
+    let body = JSON.stringify(updatedEmployee);
+    let id = updatedEmployee.id;
+    let urlWithParams = this.employeesUrl + id;
+    return this.httpClient.patch<Employee>(urlWithParams, body, { "headers": headers });
+  }
+
+  deleteEmployee(selectedEmployeeId: any) {
+    let id = selectedEmployeeId;
+    let urlWithParams = this.employeesUrl + id;
+    return this.httpClient.delete<any>(urlWithParams);
+  }
 }

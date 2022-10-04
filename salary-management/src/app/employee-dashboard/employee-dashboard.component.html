@@ -1,9 +1,17 @@
 <div id="dashboardContainer" mat-elevation-z8>
     <label class="mat-title" i18n>Dashboard</label>
 
+    <div id="buttonsContainer">
+        <button mat-raised-button color="primary" (click)="openForm('create', null)">
+            <mat-icon>add_circle</mat-icon>
+            <label i18n>Create</label>
+        </button>
+        &nbsp;
+    </div>
+    &nbsp;&nbsp;
     <div>
-        <mat-table id="empTbSort" mat-table matSort [dataSource]="dataSource" mat-elevation-z8
-            matSortActive="id" matSortDirection="asc" matSortDisableClear>
+        <mat-table id="empTbSort" mat-table matSort [dataSource]="dataSource" mat-elevation-z8 matSortActive="id"
+            matSortDirection="asc" matSortDisableClear>
             <ng-container matColumnDef="id">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
                 <td mat-cell *matCellDef="let element">{{ element.id }}</td>
@@ -23,12 +31,12 @@
             <ng-container matColumnDef="actions">
                 <th mat-header-cell *matHeaderCellDef>Actions</th>
                 <th mat-cell *matCellDef="let element">
-                    <button mat-raised-button color="primary" style="height:32px">
+                    <button mat-raised-button color="primary" (click)="openForm('update', element)" style="height:32px">
                         <mat-icon>edit</mat-icon>
                         <label i18n>Edit</label>
                     </button>
                     &nbsp;
-                    <button mat-raised-button color="primary" style="height:32px">
+                    <button mat-raised-button color="primary" (click)="deleteEmployee(element)" style="height:32px">
                         <mat-icon>delete</mat-icon>
                         <label i18n>Delete</label>
                     </button>

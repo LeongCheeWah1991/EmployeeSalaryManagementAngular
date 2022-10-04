@@ -6,15 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashboard.component';
 import { EmployeeFunctionOneComponent } from './employee-function-one/employee-function-one.component';
+import { EmployeeFormComponent } from './employee-form/employee-form.component';
+import { PromptDialogComponent } from './prompt-dialog/prompt-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeDashboardComponent,
     EmployeeFunctionOneComponent,
+    EmployeeFormComponent,
+    PromptDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,6 +27,8 @@ import { EmployeeFunctionOneComponent } from './employee-function-one/employee-f
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
