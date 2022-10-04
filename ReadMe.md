@@ -1,5 +1,6 @@
-Title: Leong Chee Wah Employee Salary Management Assignment
-
+---------------------------------------------------------------------------
+Leong Chee Wah Employee Salary Management Assignment
+---------------------------------------------------------------------------
 This is the Frontend component for the assignment. For the Backend component, please refer to the Backend Repo as follows:
 https://github.com/LeongCheeWah1991/EmployeeSalaryManagementSpringBoot
 
