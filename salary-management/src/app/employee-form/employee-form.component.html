@@ -1,0 +1,68 @@
+<div id='employeeFormContainer'>
+    <label *ngIf="this.formType ==='create'">
+        <h1 i18n>Create Employee</h1>
+    </label>
+    <label *ngIf="this.formType ==='update'">
+        <h1 i18n>Update Employee</h1>
+    </label>
+
+    <form [formGroup]="employeeForm">
+        <div>
+            <label i18n style="margin-right: 28px;">Id:</label>
+            <mat-form-field appearance="standard">
+                <input matInput maxlength="50" inputmode="text" placeholder="Id" formControlName="id" #employeeIdInput>
+                <mat-error *ngIf="employeeForm.controls['id'].errors?.['required']" i18n>Id is required</mat-error>
+                <mat-error *ngIf="employeeForm.controls['id'].errors?.['pattern']" i18n>No Special Characters
+                </mat-error>
+                <mat-error *ngIf="employeeForm.controls['id'].errors?.['maxlength']" i18n>Exceeds Max Length :
+                    {{maxLength}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <label i18n style="margin-right: 5px;">Login:</label>
+            <mat-form-field appearance="standard">
+                <input matInput maxlength="50" inputmode="text" placeholder="Login" formControlName="login"
+                    #employeeLoginInput>
+                <mat-error *ngIf="employeeForm.controls['login'].errors?.['required']" i18n>Login is required
+                </mat-error>
+                <mat-error *ngIf="employeeForm.controls['login'].errors?.['pattern']" i18n>No Special Characters
+                </mat-error>
+                <mat-error *ngIf="employeeForm.controls['login'].errors?.['maxlength']" i18n>Exceeds Max Length :
+                    {{maxLength}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <label i18n style="margin-right: 5px;">Name:</label>
+            <mat-form-field appearance="standard">
+                <input matInput maxlength="255" inputmode="text" placeholder="Name" formControlName="name"
+                    #employeeNameInput>
+                <mat-error *ngIf="employeeForm.controls['name'].errors?.['required']" i18n>Name is required</mat-error>
+                <mat-error *ngIf="employeeForm.controls['name'].errors?.['pattern']" i18n>No Special Characters
+                </mat-error>
+                <mat-error *ngIf="employeeForm.controls['name'].errors?.['maxlength']" i18n>Exceeds Max Length :
+                    {{nameMaxLength}}</mat-error>
+
+            </mat-form-field>
+        </div>
+        <div>
+            <label i18n style="margin-right: 5px;">Salary:</label>
+            <mat-form-field appearance="standard">
+                <input matInput inputmode="decimal" placeholder="Salary" formControlName="salary" #employeeSalaryInput>
+                <mat-error *ngIf="employeeForm.controls['salary'].errors?.['required']" i18n>Salary is required
+                </mat-error>
+                <mat-error *ngIf="employeeForm.controls['salary'].errors?.['pattern']" i18n>Numbers only</mat-error>
+            </mat-form-field>
+        </div>
+    </form>
+
+    <div><label id="errorLabel" *ngIf="this.errorMsg !=''">{{errorMsg}}</label></div>
+
+    <div id="formButtonsContainer" mat-dialog-actions>
+        <button mat-button (click)="onCancel()" i18n>Cancel</button>
+        <button inputType="submit" mat-raised-button color="primary" (click)="onConfirm('create')"
+            *ngIf="this.formType ==='create'" i18n>Create</button>
+        <button inputType="submit" mat-raised-button color="primary" (click)="onConfirm('update')"
+            *ngIf="this.formType ==='update'" i18n>Update</button>
+    </div>
+
+</div>

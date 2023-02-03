@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>
+    {{title}}
+</h1>
+
+<div mat-dialog-content>
+    <p>{{message}}</p>
+</div>
+<div *ngIf="uploadStatus" class="dialog-spinner-container">
+    <mat-progress-spinner color="primary" mode="indeterminate" [diameter]="40">
+    </mat-progress-spinner>
+</div>
+<div id="uploadDialogButtonsContainer" mat-dialog-actions>
+    <button mat-raised-button color="warn" (click)="onCancel()" i18n>Cancel</button>
+</div>

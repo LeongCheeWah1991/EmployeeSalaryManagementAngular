@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>
+    {{title}}
+  </h1>
+  
+  <div mat-dialog-content>
+    <p>{{message}}</p>
+  </div>
+  
+  <div id="promptDialogButtonsContainer" mat-dialog-actions>
+    <button *ngIf="this.type==='error'" mat-raised-button color="warn" (click)="onConfirm()" i18n>{{errorButtonText}}</button>
+    <button *ngIf="this.type==='prompt'" mat-button (click)="onCancel()" i18n>{{cancelButtonText}}</button>
+    <button *ngIf="this.type==='prompt'" mat-raised-button color="warn" (click)="onConfirm()" i18n>{{confirmButtonText}}</button>
+  </div>

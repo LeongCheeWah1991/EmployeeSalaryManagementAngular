@@ -1,0 +1,7 @@
+{
+    "/users": {
+        "target": "http://localhost:9911",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}
